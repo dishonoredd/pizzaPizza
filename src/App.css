@@ -14,7 +14,7 @@ img {
 
 .wrapper {
   height: 100vh;
-  overflow: hidden;
+  overflow: scroll;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,16 +23,6 @@ img {
 
 .underline {
   text-decoration: underline;
-}
-
-.invisible {
-  display: none;
-}
-
-.visible {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .p {

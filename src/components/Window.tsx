@@ -4,96 +4,137 @@ import { CartItem, CartItemView } from "./cart-item";
 import { Good, goods } from "./goods";
 import { useImmer } from "use-immer";
 import { GoodView } from "./good-view";
-import { Tabs } from "../ui/tabs";
+import { Cart } from "./Cart";
+import { CartOpener } from "./CartOpener";
+// import { Tabs } from "../ui/tabs";
 
 export function Window() {
-    const [tab, setTab] = useState(1);
-    const [cartItems, updateCartItems] = useImmer<CartItem[]>([]);
+  const [tab, setTab] = useState(1);
+  const [cartItems, updateCartItems] = useImmer<CartItem[]>([]);
+  const startPrice = 590;
+  const [sum, setSum] = useState(startPrice);
+  const [active, setActive] = useState(false);
+  const [amount, setAmount] = useState(1);
 
-    function addCartItem(good: Good) {
-        const isAlreadyExist = cartItems.some((x) => x.id === good.id);
-        if (isAlreadyExist) return;
-
-        updateCartItems((draft) => {
-            draft.push({
-                name: good.name,
-                price: good.price,
-                id: good.id,
-            });
-        });
+  function onPlus() {
+    if (amount < 10) {
+      setAmount(amount + 1);
     }
+  }
 
-    return (
-        <main className={css.window}>
-            <Tabs
-                tabs={[
-                    { id: "1", label: "Первый таб", content: <p>Hello 1</p> },
-                    { id: "2", label: "Второй таб", content: <p>Hello 2</p> },
-                    { id: "3", label: "Третий таб", content: <p>Hello 3</p> },
-                ]}
-                onChange={() => {}}
-            />
-            <div className={css.left}>
-                <h2 className={css.h}>Выбери свои ингредиенты</h2>
-                <div className={css.tabs}>
-                    <div className={css.tabs__container}>
-                        <p className={` ${tab !== 1 ? "p" : "green"}`} onClick={() => setTab(1)}>
-                            Мясо
-                        </p>
-                        <p className={`p ${tab === 2 ? "green" : ""}`} onClick={() => setTab(2)}>
-                            Сыр
-                        </p>
-                        <p className={`p ${tab === 3 ? "green" : ""}`} onClick={() => setTab(3)}>
-                            Овощи
-                        </p>
-                    </div>
+  function onMinus() {
+    if (amount > 1) {
+      setAmount(amount - 1);
+    }
+  }
 
-                    <div>
-                        <div className={`invisible ${tab === 1 ? "visible" : ""}`}>
-                            <div className={css.elements}>
-                                {goods[0].map((x) => (
-                                    <GoodView key={x.id} good={x} onClick={() => addCartItem(x)} />
-                                ))}
-                            </div>
-                        </div>
+  function addCartItem(good: Good) {
+    const isAlreadyExist = cartItems.some((x) => x.id === good.id);
 
-                        <div className={`invisible ${tab === 2 ? "visible" : ""}`}>
-                            <div className={css.elements}>
-                                {goods[1].map((x) => (
-                                    <GoodView key={x.id} good={x} onClick={() => addCartItem(x)} />
-                                ))}
-                            </div>
-                        </div>
-                        <div className={`invisible ${tab === 3 ? "visible" : ""}`}>
-                            <div className={css.elements}>
-                                {goods[2].map((x) => (
-                                    <GoodView key={x.id} good={x} onClick={() => addCartItem(x)} />
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className={css.right}>
-                <img src="./src/img/free-icon-pizza-9633377.png" alt="" className={css.pizza} />
-                <p>Ваша пицца</p>
+    if (isAlreadyExist) return;
 
-                <div className="">
-                    <p>колбаса сыр итд</p>
-                </div>
+    setSum(sum + good.price);
 
-                {cartItems.map((item, i) => (
-                    <CartItemView
-                        key={item.id}
-                        item={item}
-                        onDelete={() => {
-                            updateCartItems((draft) => {
-                                draft.splice(i, 1);
-                            });
-                        }}
-                    />
+    updateCartItems((draft) => {
+      draft.push({
+        name: good.name,
+        price: good.price,
+        id: good.id,
+      });
+    });
+  }
+
+  return (
+    <main className={css.window}>
+      <div className={css.left}>
+        <h2 className={css.h}>Выбери свои ингредиенты</h2>
+        <div className={css.tabs}>
+          <div className={css.tabs__container}>
+            <p
+              className={` ${tab !== 1 ? "p" : "green"}`}
+              onClick={() => setTab(1)}
+            >
+              Мясо
+            </p>
+            <p
+              className={`p ${tab === 2 ? "green" : ""}`}
+              onClick={() => setTab(2)}
+            >
+              Сыр
+            </p>
+            <p
+              className={`p ${tab === 3 ? "green" : ""}`}
+              onClick={() => setTab(3)}
+            >
+              Овощи
+            </p>
+          </div>
+
+          <div>
+            {tab === 1 && (
+              <div className={css.elements}>
+                {goods[0].map((x) => (
+                  <GoodView
+                    key={x.id}
+                    good={x}
+                    onClick={() => addCartItem(x)}
+                  />
                 ))}
-            </div>
-        </main>
-    );
+              </div>
+            )}
+            {tab === 2 && (
+              <div className={css.elements}>
+                {goods[1].map((x) => (
+                  <GoodView
+                    key={x.id}
+                    good={x}
+                    onClick={() => addCartItem(x)}
+                  />
+                ))}
+              </div>
+            )}
+            {tab === 3 && (
+              <div className={css.elements}>
+                {goods[2].map((x) => (
+                  <GoodView
+                    key={x.id}
+                    good={x}
+                    onClick={() => addCartItem(x)}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+        {active && <Cart setActive={setActive} sum={sum} />}
+      </div>
+      <div className={css.right}>
+        <img
+          src="./src/img/free-icon-pizza-9633377.png"
+          alt=""
+          className={css.pizza}
+        />
+        <h1 className={css.title}>Ваша пицца</h1>
+        <p className={css.first__price}>
+          {" "}
+          Начальная цена пиццы: {startPrice} ₽
+        </p>
+        <div className={css.amount}>
+          {cartItems.map((item, i) => (
+            <CartItemView
+              key={item.id}
+              item={item}
+              onDelete={() => {
+                updateCartItems((draft) => {
+                  draft.splice(i, 1);
+                  setSum(sum - item.price);
+                });
+              }}
+            />
+          ))}
+        </div>
+        <CartOpener setActive={setActive} sum={sum} startPrice={startPrice} />
+      </div>
+    </main>
+  );
 }
