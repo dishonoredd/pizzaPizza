@@ -1,263 +1,262 @@
 .window {
-  width: 1200px;
-  height: fit-content;
-  background-color: white;
-  border-radius: 5px;
-  display: flex;
+    flex-basis: 1200px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
 }
 
 .left {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+    flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 .right {
-  width: 50%;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
 }
 
 .h {
-  align-self: flex-start;
-  padding-top: 30px;
-  padding-left: 35px;
-  font-weight: 600;
-  color: rgba(43, 16, 7, 0.753);
+    align-self: flex-start;
+    padding-top: 30px;
+    padding-left: 35px;
+    font-weight: 600;
+    color: rgba(43, 16, 7, 0.753);
 }
 
-.tabs__container {
-  width: 100%;
-  padding-left: 7px;
-  display: flex;
-  justify-content: flex-start;
-  gap: 20px;
-  margin-bottom: 30px;
+.tabsContainer {
+    width: 100%;
+    padding-left: 7px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    margin-bottom: 30px;
 }
 
 .tabs {
-  width: 90%;
-  height: 80%;
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .element__container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
 }
 
 .element {
-  width: 90%;
-  height: 160px;
-  background-color: rgb(245, 245, 245);
-  border-radius: 10px;
-  margin-bottom: 20px;
-  transition: 0.1s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  cursor: pointer;
+    background-color: rgb(245, 245, 245);
+    border-radius: 10px;
+    transition: 0.1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
 }
 
 .element:hover {
-  background-color: rgb(230, 230, 230);
+    background-color: rgb(230, 230, 230);
 }
 
 .elements {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  width: 100%;
-  height: 100%;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+    height: 100%;
 }
 
 .img {
-  width: 75px;
-  height: 75px;
+    width: 75px;
+    height: 75px;
 }
 
 .p {
-  font-weight: 600;
-  text-align: center;
-  color: rgba(43, 16, 7, 0.753);
+    font-weight: 600;
+    text-align: center;
+    color: rgba(43, 16, 7, 0.753);
 }
 
 .item {
-  font-weight: 600;
+    font-weight: 600;
 
-  color: rgba(0, 0, 0, 0.753);
+    color: rgba(0, 0, 0, 0.753);
 }
 
 .pizza {
-  width: 250px;
-  height: 250px;
-  align-self: center;
-  margin-top: 40px;
+    width: 250px;
+    height: 250px;
+    align-self: center;
+    margin-top: 40px;
 }
 
 .delete__button {
-  width: 15px;
-  height: 15px;
-  background-color: transparent;
-  border: 1px solid transparent;
-  cursor: pointer;
+    width: 15px;
+    height: 15px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
 }
 
 .ingredient__container {
-  align-self: center;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 5px;
-  width: 90%;
-  height: 10%;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 5px;
 }
 
 .price__delete {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 175px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .item__green {
-  font-weight: 600;
-  color: green;
+    font-weight: 600;
+    color: green;
 }
 
 .title {
-  color: rgb(129, 39, 39);
-  margin-top: 20px;
-  font-weight: 500;
-  text-align: center;
-  margin-bottom: 20px;
+    color: rgb(129, 39, 39);
+    margin-top: 20px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .amount {
-  height: 300px;
-  max-height: fit-content;
-  display: flex;
-  flex-direction: column;
-  overflow: scroll;
-  overflow-x: hidden;
-  width: 90%;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.p {
+    cursor: pointer;
+    transition: 0.1s;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 2px solid transparent;
+}
+
+.tabActive {
+    color: green;
+    border-bottom: 2px solid green;
 }
 
 .amount::-webkit-scrollbar {
-  width: 6px;
-  height: 10px;
+    width: 6px;
+    height: 10px;
 }
 .amount::-webkit-scrollbar-track {
-  background-color: #edeef0;
+    background-color: #edeef0;
 }
 .amount::-webkit-scrollbar-thumb {
-  background-color: green;
+    background-color: green;
 }
 
 .bottom {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  width: 80%;
-  align-self: center;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 80%;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .basket__btn {
-  height: 50px;
-  width: 140px;
-  border-radius: 20px;
-  background-color: green;
-  border: 0px;
-  font-size: 18px;
-  font-weight: 500;
-  color: white;
-  transition: 0.2s;
-  cursor: pointer;
+    height: 50px;
+    width: 140px;
+    border-radius: 20px;
+    background-color: green;
+    border: 0px;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    transition: 0.2s;
+    cursor: pointer;
 }
 
 .basket__btn:hover {
-  background-color: rgb(0, 109, 0);
+    background-color: rgb(0, 109, 0);
 }
 
 .first__price {
-  font-weight: 500;
-  color: rgb(199, 199, 199);
-  text-align: center;
-  margin-bottom: 20px;
+    font-weight: 500;
+    color: rgb(199, 199, 199);
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .red__span {
-  color: rgb(209, 0, 0);
+    color: rgb(209, 0, 0);
 }
 .green__span {
-  color: rgb(7, 128, 7);
+    color: rgb(7, 128, 7);
 }
 
 .left__bottom {
-  align-self: flex-start;
-  width: 90%;
-  height: 280px;
-  margin-left: 30px;
-  position: relative;
-  padding: 30px;
-  margin-bottom: 10px;
-  background-color: rgb(245, 245, 245);
-  border-radius: 20px;
+    align-self: flex-start;
+    margin-left: 30px;
+    position: relative;
+    padding: 30px;
+    margin-bottom: 10px;
+    background-color: rgb(245, 245, 245);
+    border-radius: 20px;
 }
 
 .summa {
-  padding-top: 10px;
-  font-size: 22px;
-  font-weight: 500;
-  color: rgb(43, 43, 43);
+    padding-top: 10px;
+    font-size: 22px;
+    font-weight: 500;
+    color: rgb(43, 43, 43);
 }
 
 .delete__cart {
-  margin-top: 20px;
-  margin-right: 20px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
-  background-color: transparent;
-  border: 1px solid transparent;
-  cursor: pointer;
+    margin-top: 20px;
+    margin-right: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
 }
 
 .add__container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
 }
 
 .plusminus {
-  width: 20px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  background-color: transparent;
-  border: 0px;
-  cursor: pointer;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    background-color: transparent;
+    border: 0px;
+    cursor: pointer;
 }
 
 .x {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
 }
