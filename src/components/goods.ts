@@ -46,7 +46,7 @@ const array = [
       img: "./src/img/free-icon-cheese-517561.png",
     },
     {
-      name: "Итальянские сыры",
+      name: "Маасдам",
       price: 89,
       img: "./src/img/free-icon-cheese-slice-7522575.png",
     },
