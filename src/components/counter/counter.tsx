@@ -1,4 +1,6 @@
 import css from "/src/components/counter/counter.module.css";
+import minusImg from "/src/img/free-icon-minus-2550003.png";
+import plusImg from "/src/img/free-icon-plus-2549959.png";
 
 type CounterProps = {
   onChange: (count: number) => void;
@@ -25,7 +27,7 @@ export function Counter(props: CounterProps) {
           }
         }}
       >
-        <img src="./src/img/free-icon-minus-2550003.png" />
+        <img src={minusImg} />
       </button>
       <p className={css.item__green} style={{ color: "rgb(185, 0, 0)" }}>
         {value}
@@ -38,7 +40,8 @@ export function Counter(props: CounterProps) {
           }
         }}
       >
-        <img src="./src/img/free-icon-plus-2549959.png" alt="" />
+        plusImg
+        <img src={plusImg} alt="" />
       </button>
     </>
   );
