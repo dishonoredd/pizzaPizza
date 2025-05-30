@@ -1,4 +1,4 @@
-import css from "./window.module.css";
+import css from "/src/components/counter/counter.module.css";
 
 type CounterProps = {
   onChange: (count: number) => void;

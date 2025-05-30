@@ -1,13 +1,13 @@
-import { Window } from "./components/Window";
+import { Window } from "./components/window/Window";
 
 import "./App.css";
 
 function App() {
-    return (
-        <div className="wrapper">
-            <Window />
-        </div>
-    );
+  return (
+    <main className="wrapper">
+      <Window />
+    </main>
+  );
 }
 
 export default App;

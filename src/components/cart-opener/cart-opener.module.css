@@ -1,0 +1,33 @@
+.bottom {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 80%;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.p {
+  font-weight: 600;
+  text-align: center;
+  color: rgba(43, 16, 7, 0.753);
+}
+.green__span {
+  color: rgb(7, 128, 7);
+}
+.basket__btn {
+  height: 50px;
+  width: 140px;
+  border-radius: 20px;
+  background-color: green;
+  border: 0px;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.basket__btn:hover {
+  background-color: rgb(0, 109, 0);
+}

@@ -1,0 +1,31 @@
+.element {
+  width: 90%;
+  height: 160px;
+  background-color: rgb(245, 245, 245);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  transition: 0.1s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.element:hover {
+  background-color: rgb(230, 230, 230);
+}
+
+.img {
+  width: 75px;
+  height: 75px;
+}
+.p {
+  font-weight: 600;
+  text-align: center;
+  color: rgba(43, 16, 7, 0.753);
+}
+.green__span {
+  color: rgb(7, 128, 7);
+}

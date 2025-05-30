@@ -1,0 +1,56 @@
+.green__span {
+  color: rgb(7, 128, 7);
+}
+.basket__btn {
+  height: 50px;
+  width: 140px;
+  border-radius: 20px;
+  background-color: green;
+  border: 0px;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.summa {
+  padding-top: 10px;
+  font-size: 22px;
+  font-weight: 500;
+  color: rgb(43, 43, 43);
+}
+
+.h {
+  align-self: flex-start;
+  padding-top: 30px;
+  padding-left: 35px;
+  font-weight: 600;
+  color: rgba(43, 16, 7, 0.753);
+}
+
+.left__bottom {
+  align-self: flex-start;
+  width: 90%;
+  height: 280px;
+  margin-left: 30px;
+  position: relative;
+  padding: 30px;
+  margin-bottom: 10px;
+  background-color: rgb(245, 245, 245);
+  border-radius: 20px;
+}
+
+.delete__cart {
+  margin-top: 20px;
+  margin-right: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+}

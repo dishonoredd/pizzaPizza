@@ -1,0 +1,49 @@
+.ingredient__container {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 5px;
+  width: 90%;
+  height: 10%;
+}
+
+.item {
+  font-weight: 600;
+
+  color: rgba(0, 0, 0, 0.753);
+}
+
+.price__delete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 175px;
+}
+
+.add__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.x {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.delete__button {
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.item__green {
+  font-weight: 600;
+  color: green;
+}

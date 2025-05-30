@@ -1,11 +1,13 @@
 import { useState } from "react";
-import css from "./window.module.css";
-import { CartItem, CartItemView } from "./cart-item";
-import { Good, goods } from "./goods";
+import css from "/src/components/window/window.module.css";
+
+import { Good, goods } from "../../additional/goods";
 import { useImmer } from "use-immer";
-import { GoodView } from "./good-view";
-import { Cart } from "./Cart";
-import { CartOpener } from "./CartOpener";
+
+import { CartOpener } from "../cart-opener/cart-opener";
+import { Cart } from "../carts/cart";
+import { CartItem, CartItemView } from "../cart-item/cart-item";
+import { GoodView } from "../good-view/good-view";
 
 const startPrice = 590;
 
@@ -33,7 +35,7 @@ export function Window() {
   cartItems.forEach((item) => (sum += item.count * item.price));
 
   return (
-    <main className={css.window}>
+    <div className={css.window}>
       <div className={css.left}>
         <h2 className={css.h}>Выбери свои ингредиенты</h2>
         <div className={css.tabs}>
@@ -103,10 +105,7 @@ export function Window() {
           className={css.pizza}
         />
         <h1 className={css.title}>Ваша пицца</h1>
-        <p className={css.first__price}>
-          {" "}
-          Начальная цена пиццы: {startPrice} ₽
-        </p>
+        <p className={css.first__price}>Начальная цена пиццы: {startPrice} ₽</p>
         <div className={css.amount}>
           {cartItems.map((item, i) => (
             <CartItemView
@@ -127,6 +126,6 @@ export function Window() {
         </div>
         <CartOpener onClick={setActive} sum={sum} startPrice={startPrice} />
       </div>
-    </main>
+    </div>
   );
 }

@@ -1,5 +1,5 @@
-import { Counter } from "./counter";
-import css from "./window.module.css";
+import { Counter } from "../counter/counter";
+import css from "/src/components/cart-item/cart-item.module.css";
 
 export type CartItem = {
   id: string;
