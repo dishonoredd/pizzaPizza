@@ -40,7 +40,6 @@ export function Counter(props: CounterProps) {
           }
         }}
       >
-        plusImg
         <img src={plusImg} alt="" />
       </button>
     </>
