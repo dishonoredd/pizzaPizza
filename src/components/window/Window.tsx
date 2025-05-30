@@ -1,6 +1,6 @@
 import { useState } from "react";
 import css from "/src/components/window/window.module.css";
-
+import pizzaImg from "/src/img/free-icon-pizza-9633377.png";
 import { Good, goods } from "../../additional/goods";
 import { useImmer } from "use-immer";
 
@@ -99,11 +99,7 @@ export function Window() {
         {active && <Cart onClick={setActive} totalPrice={sum + startPrice} />}
       </div>
       <div className={css.right}>
-        <img
-          src="./src/img/free-icon-pizza-9633377.png"
-          alt=""
-          className={css.pizza}
-        />
+        <img src={pizzaImg} alt="" className={css.pizza} />
         <h1 className={css.title}>Ваша пицца</h1>
         <p className={css.first__price}>Начальная цена пиццы: {startPrice} ₽</p>
         <div className={css.amount}>
